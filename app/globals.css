@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --navigation-height: 6.8rem;
+  }
+
   html {
     scroll-behavior: smooth;
     background-color: black;

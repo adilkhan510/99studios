@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+
 export default function Container({
   children,
   className,
@@ -8,7 +10,7 @@ export default function Container({
   props?: any;
 }) {
   return (
-    <div className='mx-auto max-w-[1200px]' {...props}>
+    <div className={classNames('mx-auto max-w-[120rem]', className)} {...props}>
       {children}
     </div>
   );
