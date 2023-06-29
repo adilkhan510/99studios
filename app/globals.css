@@ -7,5 +7,6 @@
     scroll-behavior: smooth;
     background-color: black;
     @apply antialiased bg-black text-white;
+    font-size: 62.5%;
   }
 }
