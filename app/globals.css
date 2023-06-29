@@ -10,7 +10,7 @@
   html {
     scroll-behavior: smooth;
     background-color: black;
-    @apply antialiased bg-black text-white;
+    @apply antialiased bg-black-100 text-white;
     font-size: 62.5%;
   }
 }
