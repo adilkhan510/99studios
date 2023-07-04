@@ -1,5 +1,6 @@
 'use client';
 
+import { Button } from './Button';
 import Container from './Container';
 import { motion } from 'framer-motion';
 
@@ -49,6 +50,9 @@ export default function Hero({ title, subtitle, description }: HeroProps) {
         </motion.h1>
         <h2 className='text-md '>{subtitle}</h2>
         <p className='text-sm '>{description}</p>
+        <Button href='/' variant='primary' size='large'>
+          Get Started
+        </Button>
       </div>
     </Container>
   );
