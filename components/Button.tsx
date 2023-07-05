@@ -1,15 +1,17 @@
 import { cva, VariantProps } from 'class-variance-authority';
+import classNames from 'classnames';
 import Link from 'next/link';
 
 interface ButtonProps extends VariantProps<typeof buttonClasses> {
   children: React.ReactNode;
   href: string;
+  className?: string;
 }
 
 export const buttonClasses = cva('rounded-full inline-flex items-center', {
   variants: {
     variant: {
-      primary: 'bg-linear-gradient',
+      primary: 'bg-linear-gradient hover:text-shadow',
       secondary: '',
       tertiary: '',
     },
@@ -25,9 +27,18 @@ export const buttonClasses = cva('rounded-full inline-flex items-center', {
   },
 });
 
-export const Button = ({ children, href, variant, size }: ButtonProps) => {
+export const Button = ({
+  children,
+  href,
+  variant,
+  size,
+  className,
+}: ButtonProps) => {
   return (
-    <Link className={buttonClasses({ variant, size })} href={href}>
+    <Link
+      className={classNames(buttonClasses({ variant, size }), className)}
+      href={href}
+    >
       {children}
     </Link>
   );

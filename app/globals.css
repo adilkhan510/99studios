@@ -5,6 +5,7 @@
 @layer base {
   :root {
     --navigation-height: 6.8rem;
+    --transparent: rgba(255, 255, 255, 0);
   }
 
   html {
@@ -12,5 +13,11 @@
     background-color: black;
     @apply antialiased bg-black-100 text-white;
     font-size: 62.5%;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 }

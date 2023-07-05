@@ -34,10 +34,26 @@ module.exports = {
       'primary-text': '#b4bcd0',
       'black-100': '#000',
     },
-    plugins: [],
     backgroundImage: {
       'linear-gradient':
         'linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%)',
+      'radial-gradient':
+        'radial-gradient(ellipse 80% 50% at 50% -20%,rgba(120,119,198,0.3),var(--transparent))',
+    },
+    keyframes: {
+      'fade-in': {
+        from: { opacity: 0, transform: 'translateY(-20px)' },
+        to: { opacity: 1, transform: 'translateY(0)' },
+      },
+      'fade-in-up': {
+        from: { opacity: 0, transform: 'translateY(20px)' },
+        to: { opacity: 1, transform: 'translateY(0)' },
+      },
+    },
+    animation: {
+      'fade-in': 'fade-in 1000ms ease-in-out',
+      'fade-in-up': 'fade-in-up 1000ms ease-in-out',
     },
   },
+  plugins: [],
 };

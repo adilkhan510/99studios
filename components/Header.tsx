@@ -9,7 +9,7 @@ interface HeaderProps {
 
 export default function Header({ className }: HeaderProps) {
   return (
-    <header className='fixed top-0 left-0 w-full  '>
+    <header className='fixed top-0 left-0 w-full backdrop-blur-[12px]  '>
       <Container className='flex h-[var(--navigation-height)] '>
         <nav className='flex  items-center  border-b border-transparent-white  w-full'>
           <Link href='/'>

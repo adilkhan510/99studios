@@ -32,28 +32,19 @@ export default function Hero({ title, subtitle, description }: HeroProps) {
   return (
     <Container>
       <div className='flex w-[1100px] h-[600px] justify-center items-center flex-col m-auto space-y-4'>
-        <motion.h1
-          variants={typeWriterEffect}
-          initial='hidden'
-          animate='visible'
-          className='text-8xl mb-10'
+        <h1 className='text-8xl mb-10 animate-fade-in-up'>99 Studios</h1>
+        <h2 className='text-md animate-fade-in '>{subtitle}</h2>
+        <p className='text-sm animate-fade-in'>{description}</p>
+        <Button
+          href='/'
+          variant='primary'
+          size='large'
+          className='animate-fade-in'
         >
-          {title.split('').map((char, index) => (
-            <motion.span
-              key={char + '-' + index}
-              variants={typeWriterChar}
-              className='inline-block'
-            >
-              {char}
-            </motion.span>
-          ))}
-        </motion.h1>
-        <h2 className='text-md '>{subtitle}</h2>
-        <p className='text-sm '>{description}</p>
-        <Button href='/' variant='primary' size='large'>
           Get Started
         </Button>
       </div>
+      <div className='h-[1000rem]'></div>
     </Container>
   );
 }
