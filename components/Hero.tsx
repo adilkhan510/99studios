@@ -3,6 +3,7 @@
 import { Button } from './Button';
 import Container from './Container';
 import { motion } from 'framer-motion';
+import HeroImg from './HeroImg';
 
 const typeWriterEffect = {
   hidden: { opacity: 1 },
@@ -44,7 +45,9 @@ export default function Hero({ title, subtitle, description }: HeroProps) {
           Get Started
         </Button>
       </div>
-      <div className='h-[1000rem]'></div>
+      <div className='h-[1000rem] flex justify-center'>
+        <HeroImg />
+      </div>
     </Container>
   );
 }
