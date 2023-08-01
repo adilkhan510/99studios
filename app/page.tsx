@@ -9,18 +9,16 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div>
-      <main className='bg-radial-gradient'>
-        {/* <Hero
+    <div className='bg-radial-gradient'>
+      {/* <Hero
           title='99studios'
           subtitle='Crafting Digital Experiences for tomorrow'
           description='We are a team of passionate designers and developers who love to create awesome websites and apps.'
         /> */}
-        <HeroV2 />
-        <FeatureList />
-        <Cta />
-        <Footer />
-      </main>
+      <HeroV2 />
+      <FeatureList />
+      <Cta />
+      <Footer />
     </div>
   );
 }

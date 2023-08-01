@@ -23,8 +23,8 @@ export default function HeroV2() {
             Business With Us
           </h1>
           <p className='text-lg mt-4 text-slate-600 min-w-2xl'>
-            With our deep expertise in modern web technologies, we're here to
-            elevate your online presence. We enhance your visibility and
+            With our deep expertise in modern web technologies, we&apos;re here
+            to elevate your online presence. We enhance your visibility and
             stimulate your growth, propelling your business into the digital
             future.
           </p>

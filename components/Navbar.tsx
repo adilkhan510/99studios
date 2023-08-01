@@ -23,6 +23,12 @@ export default function Navbar() {
             <a className='text-lg'>
               <span className='font-bold text-slate-800'>99</span>
               <span className='text-slate-500'>studios</span>
+              <span className='text-slate-800'>
+                <img
+                  src='/icon.png'
+                  className='w-10 h-[30px] inline-block transform rotate-45'
+                />
+              </span>
             </a>
           </Link>
           <div className='block lg:hidden' onClick={handleMenuClick}>

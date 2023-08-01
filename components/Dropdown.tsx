@@ -2,12 +2,19 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+interface DropdownProps {
+  title: string;
+  lastItem: boolean;
+  children: { title: string; path: string }[];
+  isMobileMenuOpen: boolean;
+}
+
 export default function DropdownComponent({
   title,
   lastItem,
   children,
   isMobileMenuOpen,
-}) {
+}: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -44,13 +51,14 @@ export default function DropdownComponent({
             }`}
           >
             <div className='px-3 lg:py-2 lg:bg-white lg:rounded-md lg:shadow lg:border flex flex-col'>
-              {children.map((item) => (
-                <Link href={item.path} key={item.title} legacyBehavior>
-                  <a className='py-1  hover:text-gray-900  text-white text-md'>
-                    {item.title}
-                  </a>
-                </Link>
-              ))}
+              {children &&
+                children.map((item) => (
+                  <Link href={item.path} key={item.title} legacyBehavior>
+                    <a className='py-1  hover:text-gray-900  text-white text-md'>
+                      {item.title}
+                    </a>
+                  </Link>
+                ))}
             </div>
           </div>
         )}
