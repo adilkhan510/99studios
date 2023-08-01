@@ -2,16 +2,21 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-export default function DropdownComponent({ title, lastItem, children }) {
-  const [isOpen, setIsOpen] = useState(false); // Added state
+export default function DropdownComponent({
+  title,
+  lastItem,
+  children,
+  isMobileMenuOpen,
+}) {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => setIsOpen(!isOpen); // Function to toggle dropdown
+  const toggleDropdown = () => setIsOpen(!isOpen);
 
   return (
     <li className='relative'>
       <div className='group'>
         <button
-          onClick={toggleDropdown} // Added onClick handler
+          onClick={toggleDropdown}
           className='flex items-center gap-1 w-full lg:w-auto lg:px-3 py-2 text-gray-600 hover:text-gray-900'
         >
           <span>{title}</span>
@@ -30,7 +35,7 @@ export default function DropdownComponent({ title, lastItem, children }) {
             ></path>
           </svg>
         </button>
-        {isOpen && ( // Added condition
+        {isOpen && isMobileMenuOpen && (
           <div
             className={`lg:absolute w-full lg:w-48 z-10 ${
               lastItem
@@ -41,7 +46,7 @@ export default function DropdownComponent({ title, lastItem, children }) {
             <div className='px-3 lg:py-2 lg:bg-white lg:rounded-md lg:shadow lg:border flex flex-col'>
               {children.map((item) => (
                 <Link href={item.path} key={item.title} legacyBehavior>
-                  <a className='py-1  hover:text-gray-900  text-black-100 text-md'>
+                  <a className='py-1  hover:text-gray-900  text-white text-md'>
                     {item.title}
                   </a>
                 </Link>

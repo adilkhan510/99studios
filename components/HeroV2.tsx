@@ -31,13 +31,14 @@ export default function HeroV2() {
           <div className='mt-6 flex flex-col sm:flex-row gap-3 text-lg'>
             <Link
               href='#'
-              className='text-black-200 rounded-md p-4 bg-white font-semibold'
+              className='text-black-200 rounded-md p-4 font-semibold bg-white  hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105  '
             >
               Start your project
             </Link>
             <Link
               href='#'
-              className='text-black-200 rounded-md p-4 bg-white font-semibold'
+              className='text-black-200 rounded-md p-4 bg-blue-300 font-semibold shadow-md hover:bg-blue-400 
+              hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105 '
             >
               View our portfolio
             </Link>
