@@ -71,7 +71,7 @@ export default function Navbar() {
               </>
             ))}
           </ul>
-          <div className="lg:hidden flex flex-col items-start mt-3 gap-4 items-center">
+          <div className="lg:hidden flex flex-col  mt-3 gap-4 items-center">
             <Link href="#" legacyBehavior>
               <a className="block text-md text-gray-500">Client Login</a>
             </Link>

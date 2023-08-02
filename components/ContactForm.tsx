@@ -40,49 +40,49 @@ export default function CardWithForm() {
   };
 
   return (
-    <Card className='w-[350px]'>
+    <Card className="w-[350px]">
       <CardHeader>
         <CardTitle>Contact Us</CardTitle>
         <CardDescription>Use the form below to contact us.</CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit}>
-          <div className='grid w-full items-center gap-4'>
-            <div className='flex flex-col space-y-1.5'>
-              <Label htmlFor='name'>Name</Label>
+          <div className="grid w-full items-center gap-4">
+            <div className="flex flex-col space-y-1.5">
+              <Label htmlFor="name">Name</Label>
               <Input
-                id='name'
-                placeholder='Name'
+                id="name"
+                placeholder="Name"
                 onChange={(e) => {
                   console.log(e.target.value);
                   setName(e.target.value);
                 }}
               />
             </div>
-            <div className='flex flex-col space-y-1.5'>
-              <Label htmlFor='email'>Email</Label>
+            <div className="flex flex-col space-y-1.5">
+              <Label htmlFor="email">Email</Label>
               <Input
-                id='email'
-                placeholder='Email'
-                type='email'
+                id="email"
+                placeholder="Email"
+                type="email"
                 onChange={(e) => {
                   console.log(e.target.value);
                   setEmail(e.target.value);
                 }}
               />
-              <Label htmlFor='phone'>Phone</Label>
+              <Label htmlFor="phone">Phone</Label>
               <Input
-                id='phone'
-                placeholder='Phone'
-                type='tel'
+                id="phone"
+                placeholder="Phone"
+                type="tel"
                 onChange={(e) => {
                   console.log(e.target.value);
                   setPhone(e.target.value);
                 }}
               />
             </div>
-            <div className='flex flex-col space-y-1.5'>
-              <Label htmlFor='subject'>Subject</Label>
+            <div className="flex flex-col space-y-1.5">
+              <Label htmlFor="subject">Subject</Label>
               <Select
                 onValueChange={(value) => {
                   console.log(value);
@@ -90,37 +90,45 @@ export default function CardWithForm() {
                 }}
               >
                 <SelectTrigger>
-                  <SelectValue>Type of work</SelectValue>
+                  <SelectValue>{subject || 'Select a subject'}</SelectValue>
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value='Web Development'>
+                  <SelectItem value="Web Development">
                     Web Development
                   </SelectItem>
-                  <SelectItem value='Mobile Development'>
+                  <SelectItem value="Mobile Development">
                     Mobile Development
                   </SelectItem>
-                  <SelectItem value='UI/UX Design'>UI/UX Design</SelectItem>
-                  <SelectItem value='SEO'>SEO</SelectItem>
-                  <SelectItem value='Other'>Other</SelectItem>
+                  <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
+                  <SelectItem value="SEO">SEO</SelectItem>
+                  <SelectItem value="Other">Other</SelectItem>
                 </SelectContent>
               </Select>
             </div>
           </div>
         </form>
       </CardContent>
-      <CardFooter className='flex justify-between'>
+      <CardFooter className="flex justify-between">
         <Button
           onClick={() => {
-            console.log(
-              'name:',
-              name,
-              'email:',
-              email,
-              'phone:',
-              phone,
-              'subject:',
-              subject
-            );
+            if (name === '' || email === '' || phone === '' || subject === '') {
+              setError(true);
+              return;
+            }
+
+            setLoading(true);
+            fetch('/api/contact', {
+              method: 'POST',
+              body: JSON.stringify({ name, email, phone, subject }),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.status === '200') {
+                  setSuccess(true);
+                } else {
+                  setError(true);
+                }
+              });
           }}
         >
           Send
