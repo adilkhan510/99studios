@@ -49,28 +49,28 @@ const features = [
 
 const FeatureList = () => {
   return (
-    <Container className=' mt-20'>
-      <div className='mt-16 md:mt-0 mx-auto '>
-        <h2 className='text-5xl lg:text-5xl font-bold lg:tracking-tight'>
+    <Container className=" max-w-[100rem] mt-20">
+      <div className="mt-16 md:mt-0 mx-auto ">
+        <h2 className="text-5xl lg:text-5xl font-bold lg:tracking-tight">
           Empowering Your Digital Journey
         </h2>
-        <p className='text-lg mt-4 text-slate-600'>
+        <p className="text-lg mt-4 text-slate-600">
           We provide a comprehensive suite of web services. Our focus is not
           just on building websites, but on crafting digital experiences.
         </p>
       </div>
 
-      <div className='grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16'>
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16  place-content-center place-items-center">
         {features.map((item) => (
-          <div className='flex gap-4 items-start' key={item.title}>
-            <div className='mt-1 bg-black rounded-full  p-2 shrink-0 flex items-center justify-center'>
+          <div className="flex gap-4 items-start" key={item.title}>
+            <div className="mt-1 bg-black rounded-full text-white  p-2 shrink-0 flex items-center justify-center">
               {item.icon}
             </div>
             <div>
-              <h3 className='font-semibold text-lg text-blue-400'>
+              <h3 className="font-semibold text-lg text-blue-400">
                 {item.title}
               </h3>
-              <p className='text-slate-500 mt-2 text-sm leading-relaxed  '>
+              <p className="text-slate-500 mt-2 text-sm leading-relaxed  ">
                 {item.description}
               </p>
             </div>
