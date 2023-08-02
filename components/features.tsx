@@ -49,7 +49,7 @@ const features = [
 
 const FeatureList = () => {
   return (
-    <Container className=" max-w-[100rem] mt-20">
+    <Container className=" max-w-[95rem] mt-20">
       <div className="mt-16 md:mt-0 mx-auto ">
         <h2 className="text-5xl lg:text-5xl font-bold lg:tracking-tight">
           Empowering Your Digital Journey

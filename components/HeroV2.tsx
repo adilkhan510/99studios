@@ -5,7 +5,7 @@ import Container from './ui/Container';
 
 export default function HeroV2() {
   return (
-    <Container>
+    <Container className="max-w-[100rem]">
       <div className="flex pt-16 pb-8 md:pt-12 md:pb-24 justify-center">
         <div className="py-6 md:order-1 hidden md:block">
           <Image
