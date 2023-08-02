@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: {
-    default: 'studio99 - Creative Web Development Studio',
-    template: '%s | studio99',
+    default: 'Studio99 - Creative Web Development Studio',
+    template: '%s | Studio99',
   },
   description: 'Creative Web Development Studio',
   openGraph: {
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: 'studio99 - Creative Web Development Studio',
     images: [
       {
-        url: 'https://99studios.io/og.png',
+        url: 'https://studio99.io/og.png',
         width: 1920,
         height: 1080,
       },
@@ -37,7 +37,7 @@ export const metadata = {
     },
   },
   twitter: {
-    title: 'studio99',
+    title: 'Studio99',
     card: 'summary_large_image',
   },
   icons: {
@@ -57,10 +57,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <main className='mt-[var(navigation-height)]'>{children}</main>
+        <main className="mt-[var(navigation-height)]">{children}</main>
       </body>
     </html>
   );

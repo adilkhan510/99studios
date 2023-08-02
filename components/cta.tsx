@@ -8,7 +8,7 @@ const Cta = () => {
         <h2 className=" text-4xl md:text-6xl tracking-tight font-bold text-blue-300">
           Power Up Your Online Presence.
         </h2>
-        <p className="text-slate-400 mt-5 text-lg md:text-xl max-w-5xl">
+        <p className="text-slate-400 mt-5 text-lg md:text-xl max-w-4xl text-center">
           Transform your business with our top-notch web solutions that are not
           just fast, but also engaging and tailored to your needs.
         </p>
@@ -17,7 +17,7 @@ const Cta = () => {
             href="#"
             variant="inverted"
             size="large"
-            className="font-bold rounded-md"
+            className="font-bold rounded-md dark:text-black shadow-md bg-blue-300"
           >
             Get Started
           </Button>
