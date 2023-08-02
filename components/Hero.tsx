@@ -32,20 +32,20 @@ interface HeroProps {
 export default function Hero({ title, subtitle, description }: HeroProps) {
   return (
     <Container>
-      <div className='flex w-[1100px] h-[600px] justify-center items-center flex-col m-auto space-y-4'>
-        <h1 className='text-8xl mb-10 animate-fade-in-up'>99 Studios</h1>
-        <h2 className='text-md animate-fade-in '>{subtitle}</h2>
-        <p className='text-sm animate-fade-in'>{description}</p>
+      <div className="flex w-[1100px] h-[600px] justify-center items-center flex-col m-auto space-y-4">
+        <h1 className="text-8xl mb-10 animate-fade-in-up">99 Studios</h1>
+        <h2 className="text-md animate-fade-in ">{subtitle}</h2>
+        <p className="text-sm animate-fade-in">{description}</p>
         <Button
-          href='/'
-          variant='primary'
-          size='large'
-          className='animate-fade-in'
+          href="/"
+          variant="primary"
+          size="large"
+          className="animate-fade-in"
         >
           Get Started
         </Button>
       </div>
-      <div className='h-[1000rem] flex justify-center'>
+      <div className="h-[1000rem] flex justify-center">
         <HeroImg />
       </div>
     </Container>

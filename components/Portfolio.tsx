@@ -28,16 +28,16 @@ const portfolioItems = [
 
 export default function Portfolio() {
   return (
-    <Container className='mt-[10rem]'>
-      <h1 className='text-5xl font-bold mb-4 text-blue-300'>Our Portfolio</h1>
-      <p className='text-gray-600 mb-8 text-lg'>
+    <Container className="mt-[10rem]">
+      <h1 className="text-5xl font-bold mb-4 text-blue-300">Our Portfolio</h1>
+      <p className="text-gray-600 mb-8 text-lg">
         Check out some of our amazing projects.
       </p>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {portfolioItems.map((item) => (
           <motion.div
             key={item.title}
-            className='rounded shadow-lg overflow-hidden'
+            className="rounded shadow-lg overflow-hidden"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.05 }}
@@ -46,14 +46,14 @@ export default function Portfolio() {
             <img
               src={item.image}
               alt={item.title}
-              className='w-full h-64 object-cover'
+              className="w-full h-64 object-cover"
             />
-            <div className='p-6'>
-              <h2 className='text-2xl font-bold mb-2'>{item.title}</h2>
-              <p className='text-gray-600 text-md'>{item.description}</p>
+            <div className="p-6">
+              <h2 className="text-2xl font-bold mb-2">{item.title}</h2>
+              <p className="text-gray-600 text-md">{item.description}</p>
               <Link href={item.path} legacyBehavior>
-                <a className='text-black-100 mt-4 inline-block text-md bg-blue-300 px-6 py-2 rounded-sm'>
-                  <FaRocket className='inline-block text-black-100' /> Visit
+                <a className="text-black-100 mt-4 inline-block text-md bg-blue-300 px-6 py-2 rounded-sm">
+                  <FaRocket className="inline-block text-black-100" /> Visit
                   Website
                 </a>
               </Link>

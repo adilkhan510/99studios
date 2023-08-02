@@ -25,16 +25,16 @@ export default function Contact() {
           <div className="mt-5">
             <div className="flex items-center mt-2 space-x-2 text-gray-600">
               <FaMapMarkerAlt className="text-gray-400 w-4 h-4" />
-              <span>1734 Sanfransico, CA 93063</span>
+              <span>San Francisco, California</span>
             </div>
-            <div className="flex items-center mt-2 space-x-2 text-gray-600">
+            {/* <div className="flex items-center mt-2 space-x-2 text-gray-600">
               <FaEnvelope className="text-gray-400 w-4 h-4" />
-              <a href="/">email placehold</a>
+              <a href="/">email</a>
             </div>
             <div className="flex items-center mt-2 space-x-2 text-gray-600">
               <FaPhone className="text-gray-400 w-4 h-4" />
               <a href="/">555-555-5555</a>
-            </div>
+            </div> */}
           </div>
         </div>
         <div>

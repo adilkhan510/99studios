@@ -1,5 +1,7 @@
 'use client';
 import * as React from 'react';
+import Spinner from '@/components/icons/spinner';
+import CheckMark from '@/components/icons/checkmark';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -29,20 +31,47 @@ export default function CardWithForm() {
   const [phone, setPhone] = React.useState('');
   const [subject, setSubject] = React.useState('');
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
+    if (name === '' || email === '' || phone === '' || subject === '') {
+      setError(true);
+      return;
+    }
+
     setLoading(true);
-    console.log({ name, email, phone, subject });
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify({ name, email, phone, subject }),
+      });
+
+      const data = await response.json();
+
+      if (data.status === 200) {
+        setSuccess(true);
+        setName('');
+        console.log('Name:', name);
+        setEmail('');
+        setPhone('');
+        setSubject('');
+        setSuccess(true);
+      } else {
+        setError(true);
+      }
+    } catch (error) {
+      console.error('Failed to send message:', error);
+      setError(true);
+    } finally {
       setLoading(false);
-      setSuccess(true);
-    }, 2000);
+    }
   };
 
   return (
     <Card className="w-[350px]">
       <CardHeader>
-        <CardTitle>Contact Us</CardTitle>
+        <CardTitle className="flex flex-row items-center justify-between">
+          Contact Us
+          {loading ? <Spinner /> : success ? <CheckMark /> : null}
+        </CardTitle>
         <CardDescription>Use the form below to contact us.</CardDescription>
       </CardHeader>
       <CardContent>
@@ -54,9 +83,9 @@ export default function CardWithForm() {
                 id="name"
                 placeholder="Name"
                 onChange={(e) => {
-                  console.log(e.target.value);
                   setName(e.target.value);
                 }}
+                value={name}
               />
             </div>
             <div className="flex flex-col space-y-1.5">
@@ -66,9 +95,9 @@ export default function CardWithForm() {
                 placeholder="Email"
                 type="email"
                 onChange={(e) => {
-                  console.log(e.target.value);
                   setEmail(e.target.value);
                 }}
+                value={email}
               />
               <Label htmlFor="phone">Phone</Label>
               <Input
@@ -76,16 +105,15 @@ export default function CardWithForm() {
                 placeholder="Phone"
                 type="tel"
                 onChange={(e) => {
-                  console.log(e.target.value);
                   setPhone(e.target.value);
                 }}
+                value={phone}
               />
             </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="subject">Subject</Label>
               <Select
                 onValueChange={(value) => {
-                  console.log(value);
                   setSubject(value);
                 }}
               >
@@ -109,30 +137,7 @@ export default function CardWithForm() {
         </form>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button
-          onClick={() => {
-            if (name === '' || email === '' || phone === '' || subject === '') {
-              setError(true);
-              return;
-            }
-
-            setLoading(true);
-            fetch('/api/contact', {
-              method: 'POST',
-              body: JSON.stringify({ name, email, phone, subject }),
-            })
-              .then((res) => res.json())
-              .then((data) => {
-                if (data.status === '200') {
-                  setSuccess(true);
-                } else {
-                  setError(true);
-                }
-              });
-          }}
-        >
-          Send
-        </Button>
+        <Button onClick={handleSubmit}>Send</Button>
       </CardFooter>
     </Card>
   );
