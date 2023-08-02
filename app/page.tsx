@@ -1,5 +1,5 @@
-import Container from '@/components/Container';
-import Footer from '@/components/Footer';
+import Container from '@/components/ui/Container';
+import Footer from '@/components/ui/Footer';
 import Hero from '@/components/Hero';
 import HeroImg from '@/components/HeroImg';
 import HeroV2 from '@/components/HeroV2';

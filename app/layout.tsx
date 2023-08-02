@@ -6,15 +6,15 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: {
-    default: '99 studios',
-    template: '%s | 99 studios',
+    default: 'studio99 - Creative Web Development Studio',
+    template: '%s | studio99',
   },
   description: 'Creative Web Development Studio',
   openGraph: {
-    title: '99 studios',
+    title: 'studio99',
     description: 'Creative Web Development Studio',
-    url: 'https://99studios.io/',
-    siteName: '99 studios',
+    url: 'https://studio99.io/',
+    siteName: 'studio99 - Creative Web Development Studio',
     images: [
       {
         url: 'https://99studios.io/og.png',
@@ -37,7 +37,7 @@ export const metadata = {
     },
   },
   twitter: {
-    title: 'Adil Khan',
+    title: 'studio99',
     card: 'summary_large_image',
   },
   icons: {

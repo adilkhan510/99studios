@@ -42,7 +42,7 @@ export const Button = ({
   return (
     <Link
       className={classNames(buttonClasses({ variant, size }), className)}
-      href={href}
+      href={href || '/'}
     >
       {children}
     </Link>

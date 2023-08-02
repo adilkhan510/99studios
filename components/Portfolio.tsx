@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import Container from './Container';
+import Container from './ui/Container';
 import { motion } from 'framer-motion'; // Import framer-motion
 import {
   FaArrowRight,

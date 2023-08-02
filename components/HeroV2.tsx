@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import heroImage from '/public/hero.png';
-import Container from './Container';
+import Container from './ui/Container';
 
 export default function HeroV2() {
   return (
@@ -36,7 +36,7 @@ export default function HeroV2() {
               Start your project
             </Link>
             <Link
-              href='#'
+              href='/portfolio'
               className='text-black-200 rounded-md p-4 bg-blue-300 font-semibold shadow-md hover:bg-blue-400 
               hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105 '
             >

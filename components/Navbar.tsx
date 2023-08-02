@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import DropdownComponent from './Dropdown';
-import Container from './Container';
+import Container from './ui/Container';
 import { useState } from 'react';
 import menuitems from './contants/contants';
 import { BiCollapse } from 'react-icons/bi';
@@ -21,8 +21,8 @@ export default function Navbar() {
         <div className='flex w-full lg:w-auto items-center justify-between'>
           <Link href='/' legacyBehavior>
             <a className='text-lg'>
-              <span className='font-bold text-slate-800'>99</span>
-              <span className='text-slate-500'>studios</span>
+              <span className='font-bold text-slate-800'>Studio</span>
+              <span className='text-slate-500'>99</span>
               <span className='text-slate-800'>
                 <img
                   src='/icon.png'

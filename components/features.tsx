@@ -6,7 +6,7 @@ import {
   BiFileFind,
   BiUser,
 } from 'react-icons/bi';
-import Container from './Container';
+import Container from './ui/Container';
 
 const features = [
   {
