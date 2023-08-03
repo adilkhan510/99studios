@@ -9,23 +9,20 @@ const portfolioItems = [
   {
     title: 'Gems Parlor',
     description:
-      'Gems Parlor is a jewelry store. I created a website for them utilizing state of the art technologies, focusing on the user experience. The website is fully responsive and mobile friendly.',
+      'Gems Parlor, a distinguished jewelry retailer, now boasts a website designed and developed with cutting-edge technologies. The primary focus during its creation was to enhance user experience. The result is a fully responsive, mobile-friendly platform that seamlessly adapts to any device for optimal viewing and interaction.',
     image: '/gems.png',
-    path: 'https://www.gemsparlor.com/',
   },
   {
     title: 'Nameless.io',
     description:
-      'Nameless.io is a stealth startup. I created a website for them utilizing state of the art technologies, focusing on the user experience. The website is fully responsive and mobile friendly.',
+      'Web3 Startup is a burgeoning enterprise that now features a web application, meticulously crafted using Nextjs, Tailwindcss, and Typescript. The application is designed with a strong emphasis on responsiveness and mobile compatibility, ensuring a seamless user experience across all devices.',
     image: '/stealth.png',
-    path: 'https://app.nameless.io/',
   },
   {
-    title: 'SaaS Landing Page',
+    title: 'A.I based SaaS product',
     description:
-      'This is a landing page for a SaaS product. I created a website for them utilizing state of the art technologies, focusing on the user experience. The website is fully responsive and mobile friendly.',
+      'This is Nextjs based website created for an A.I based software company. I created a website for them utilizing state of the art technologies, focusing on the user experience. The website is fully responsive and mobile friendly.',
     image: '/dua.png',
-    path: 'https://dua.sh',
   },
 ];
 
@@ -60,7 +57,7 @@ export default function Portfolio() {
               <div className="p-4">
                 <h2 className="text-2xl mb-4">{item.title}</h2>
                 <p className="text-gray-400 mb-8">{item.description}</p>
-                <Link href={item.path} legacyBehavior>
+                <Link href="portfolio" legacyBehavior>
                   <a className="flex items-center text-gray-800 hover:text-blue-600 transition-colors duration-300 ease-in">
                     <FaRocket className="mr-2" />
                     <span>Visit Website</span>

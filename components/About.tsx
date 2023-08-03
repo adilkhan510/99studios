@@ -25,7 +25,7 @@ export default function About() {
             />
           </div>
           <p className="text-md md:text-lg text-gray-600 leading-relaxed mx-auto max-w-2xl">
-            We started our journey in 2023. Since then, we have worked with
+            We started our journey in 2020. Since then, we have worked with
             numerous clients, helping them to transform their businesses and
             drive growth. We are a team of passionate individuals who love what
             we do. We are strategists, designers, developers, writers, and
