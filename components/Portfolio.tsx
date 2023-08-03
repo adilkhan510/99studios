@@ -7,13 +7,13 @@ import Container from './ui/Container';
 
 const portfolioItems = [
   {
-    title: 'Gems Parlor',
+    title: 'Jewelry Ecommerce',
     description:
       'Gems Parlor, a distinguished jewelry retailer, now boasts a website designed and developed with cutting-edge technologies. The primary focus during its creation was to enhance user experience. The result is a fully responsive, mobile-friendly platform that seamlessly adapts to any device for optimal viewing and interaction.',
     image: '/gems.png',
   },
   {
-    title: 'Nameless.io',
+    title: 'Web3 Startup',
     description:
       'Web3 Startup is a burgeoning enterprise that now features a web application, meticulously crafted using Nextjs, Tailwindcss, and Typescript. The application is designed with a strong emphasis on responsiveness and mobile compatibility, ensuring a seamless user experience across all devices.',
     image: '/stealth.png',
