@@ -11,7 +11,7 @@ export default function Container({
 }) {
   return (
     <div
-      className={classNames('mx-auto max-w-[120rem] px-10', className)}
+      className={classNames('mx-auto max-w-[90rem] px-10', className)}
       {...props}
     >
       {children}

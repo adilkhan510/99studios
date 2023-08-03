@@ -4,24 +4,24 @@ interface SectionHeadProps {
   align?: 'center' | 'left';
   title?: string;
   description?: string;
-  stylish?: boolean;
+  blue?: boolean;
 }
 
 export default function SectionHead({
   align = 'center',
   title = 'Title',
   description = 'Some description goes here',
-  stylish = false,
+  blue = false,
 }: SectionHeadProps) {
   const titleClasses = classNames(
     'text-4xl lg:text-5xl font-bold lg:tracking-tight',
     {
-      'text-pink-500': stylish,
+      'text-blue-300': blue,
     }
   );
 
   const descClasses = classNames('text-lg mt-4', {
-    'text-slate-600': !stylish,
+    'text-gray-400': blue,
   });
 
   return (

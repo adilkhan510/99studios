@@ -1,13 +1,12 @@
 'use client';
 import Link from 'next/link';
-import DropdownComponent from './Dropdown';
 import Container from './ui/Container';
 import { useState } from 'react';
-import menuitems from './contants/contants';
+
 import { BiCollapse } from 'react-icons/bi';
 
 import { BiMenu } from 'react-icons/bi';
-import { FaLightbulb } from 'react-icons/fa';
+import { menuitems } from './contants/contants';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -49,26 +48,13 @@ export default function Navbar() {
         >
           <ul className="flex flex-col lg:flex-row lg:gap-3 text-md items-center">
             {menuitems.map((item, index) => (
-              <>
-                {item.children ? (
-                  <DropdownComponent
-                    key={item.title}
-                    title={item.title}
-                    lastItem={index === menuitems.length - 1}
-                    isMobileMenuOpen={isMobileMenuOpen}
-                  >
-                    {item.children}
-                  </DropdownComponent>
-                ) : (
-                  <li key={item.title}>
-                    <Link href={item.path} legacyBehavior>
-                      <a className="flex lg:px-3 py-2 text-black dark:text-white hover:text-gray-900 ">
-                        {item.title}
-                      </a>
-                    </Link>
-                  </li>
-                )}
-              </>
+              <li key={item.title}>
+                <Link href={item.path} legacyBehavior>
+                  <a className="flex lg:px-3 py-2 text-black dark:text-white hover:text-gray-900 ">
+                    {item.title}
+                  </a>
+                </Link>
+              </li>
             ))}
           </ul>
           <div className="lg:hidden flex flex-col  mt-3 gap-4 items-center">
@@ -91,13 +77,6 @@ export default function Navbar() {
               Get a Quote
             </a>
           </Link>
-          <FaLightbulb
-            size={30}
-            className="text-yellow-500 dark:text-white cursor-pointer"
-            onClick={() => {
-              document.body.classList.toggle('dark');
-            }}
-          />
         </div>
       </header>
     </Container>
